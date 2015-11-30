@@ -38,18 +38,18 @@ end
 
 dist = 0
 offset = 0
-short_pages = fetch_short_pages()
+# short_pages = fetch_short_pages()
 
 until dist >= 7 do
-  if short_pages.empty?
-    limit = 100
-    short_pages = fetch_special_short_pages(limit, offset)
-    offset += limit
-  end
+  # if short_pages.empty?
+  #   limit = 100
+  #   short_pages = fetch_special_short_pages(limit, offset)
+  #   offset += limit
+  # end
 
-  unless w = short_pages.shift()
+  # unless w = short_pages.shift()
     w = fetch_random_keyword()
-  end
+  # end
 
   d = calc_dist(w).to_i
   puts "#{w}: #{d}"
