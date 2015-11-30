@@ -13,7 +13,11 @@ end
 def calc_dist(word)
   theme = fetch_todays_theme()
   html_string = `curl -sS 'http://wikitter.info/search/s' -H 'X-Requested-With: XMLHttpRequest' --data 'start=#{theme}&goal=#{word}' --compressed`
-  return Nokogiri::HTML(html_string).css('#display-result > div:nth-child(3) > span > span').first.content
+  if result = Nokogiri::HTML(html_string).css('#display-result > div:nth-child(3) > span > span').first
+    return result.content
+  end
+
+  return -1
 end
 
 dist = 0
