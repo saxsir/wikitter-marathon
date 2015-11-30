@@ -17,7 +17,7 @@ def calc_dist(word)
 end
 
 dist = 0
-untile dist >= 7 do
+until dist >= 7 do
   w = fetch_random_keyword()
   d = calc_dist(w).to_i
   puts "#{w}: #{d}"
