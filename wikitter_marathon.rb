@@ -40,7 +40,7 @@ dist = 0
 offset = 0
 # short_pages = fetch_short_pages()
 
-until dist >= 7 do
+until dist >= 6 do
   # if short_pages.empty?
   #   limit = 100
   #   short_pages = fetch_special_short_pages(limit, offset)
