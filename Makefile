@@ -6,4 +6,8 @@ all:
 install:
 	$(BUNDLE) install --path vendor/bundle
 
+show-stats:
+	cat logs/*.log | awk '{print $$NF}' | sort | uniq -c | sort -nr
 
+show-top:
+	cat logs/*.log | awk '{print $$NF" - "$$0}' | sort -nr | head
